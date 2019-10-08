@@ -45,8 +45,19 @@ public class BaccaratGameLogic {
 
    //The methods evaluateBankerDraw and evaluatePlayerDraw will return true if
    //either one should be dealt a third card otherwise return false.
-   public boolean evaluateBankerDraw(ArrayList<Card> hand, Card playerCard){
+   //public boolean evaluateBankerDraw(ArrayList<Card> hand, Card playerCard){
 
-   }
-   //public boolean evaluatePlayerDraw(ArrayList<Card> hand)
+   //}
+
+    public boolean evaluatePlayerDraw(ArrayList<Card> hand){
+       //if hand totals to 5 or less, The Player gets one more card.
+       //If the hand totals to 6 or 7 points, no more cards are given.
+       //NOTE**use function handTotal to calculate point value of the hand
+        if((handTotal(hand) < 6) || (handTotal(hand) < 7)){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }//End of EPD
 }
