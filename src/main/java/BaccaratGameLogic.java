@@ -57,5 +57,5 @@ public class BaccaratGameLogic {
             return false;
         }
         return true;
-    }//End of EPD
+    }//End of EPD and everything else
 }
