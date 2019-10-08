@@ -54,8 +54,8 @@ public class BaccaratGameLogic {
        //If the hand totals to 6 or 7 points, no more cards are given.
        //NOTE**use function handTotal to calculate point value of the hand
         if((handTotal(hand) < 6) || (handTotal(hand) < 7)){
-            return false;
+            return true;
         }
-        return true;
-    }//End of EPD and everything else
+        return false;
+    }//End of EPD
 }
