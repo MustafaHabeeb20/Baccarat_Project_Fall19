@@ -43,6 +43,10 @@ public class BaccaratGameLogic {
         return sum;
     }//End of handtotal
 
-   //public boolean evaluateBankerDraw(ArrayList<Card> hand, Card playerCard)
+   //The methods evaluateBankerDraw and evaluatePlayerDraw will return true if
+   //either one should be dealt a third card otherwise return false.
+   public boolean evaluateBankerDraw(ArrayList<Card> hand, Card playerCard){
+
+   }
    //public boolean evaluatePlayerDraw(ArrayList<Card> hand)
 }

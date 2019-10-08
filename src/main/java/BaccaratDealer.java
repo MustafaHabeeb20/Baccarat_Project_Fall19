@@ -88,9 +88,7 @@ public class BaccaratDealer {
 
         //get the second card
         DealerorPlayer.add(drawOne());
-
-
-
+        
         return DealerorPlayer;
     }//End of dealHand
 }
