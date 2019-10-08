@@ -56,8 +56,6 @@ public class BaccaratGameLogic {
         if((handTotal(hand) < 6) || (handTotal(hand) < 7)){
             return false;
         }
-        else {
-            return true;
-        }
+        return true;
     }//End of EPD
 }
