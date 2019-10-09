@@ -31,7 +31,6 @@ public class BaccaratGame extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
-		//khch;khsd;iw;hc;iwh;haichw
 	}
 
 }
