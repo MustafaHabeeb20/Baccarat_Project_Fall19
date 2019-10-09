@@ -28,15 +28,4 @@ public class Card {
         this.suite = theSuite;        //(this.) is used to reference to the current object
         this.value = theValue;
     }
-
-
-    public int help(){
-
-         int x = 7;
-            //khewjdhfwhfwhfwh
-         return x;
-
-
-
-    }
 }
