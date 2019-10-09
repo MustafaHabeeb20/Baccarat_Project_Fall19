@@ -5,6 +5,7 @@ public class BaccaratDealer {
 
     ArrayList<Card> deck;
 
+    // These are the different suits
     String Spades = "Spades";
     String Clubs = "Clubs";
     String Hearts = "Hearts";
