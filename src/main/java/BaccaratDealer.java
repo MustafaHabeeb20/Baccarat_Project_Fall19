@@ -1,28 +1,44 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class BaccaratDealer {
 
     ArrayList<Card> deck;
 
-    // These are the different suitsss
+    // These are the different suits
     String Spades = "Spades";
     String Clubs = "Clubs";
     String Hearts = "Hearts";
     String Diamonds = "Diamonds";
+    
+    
+    // Names of all the images of the cards
+    ArrayList<String> cards = new ArrayList<>(Arrays.asList(
+    		"1S.png", "1C.png", "1H.png", "1D.png", 
+    		"2S.png", "2C.png", "2H.png", "2D.png", 
+    		"3S.png", "3C.png", "3H.png", "3D.png", 
+    		"4S.png", "4C.png", "4H.png", "4D.png", 
+    		"5S.png", "5C.png", "5H.png", "5D.png", 
+    		"6S.png", "6C.png", "6H.png", "6D.png", "7S.png", "7C.png", "7H.png", "7D.png", "8S.png", "8C.png", 
+    		"8H.png", "8D.png", "9S.png", "9C.png", "9H.png", "9D.png", "10S.png", "10C.png", "10H.png", "10D.png", 
+    		"11S.png", "11C.png", "11H.png", "11D.png", "12S.png", "12C.png", "12H.png", "12D.png", "13S.png", "13C.png", 
+    		"13H.png", "13D.png"
+    ));
 
     //generate the deck using the Card class
     public void generateDeck(){
 
         deck = new ArrayList<Card>();
-
+        int counter =0;
         for(int i = 1; i <= 13; i++){
 
             //Create 13 cards for each suite.
-            deck.add(new Card(Spades , i));
-            deck.add(new Card(Clubs, i));
-            deck.add(new Card(Hearts, i));
-            deck.add(new Card(Diamonds, i));
+            deck.add(new Card(Spades , i, cards.get(i-1 + counter)));
+            deck.add(new Card(Clubs, i,cards.get(i-1+1+ counter)));
+            deck.add(new Card(Hearts, i,cards.get(i-1+2+ counter)));
+            deck.add(new Card(Diamonds, i, cards.get(i-1+3+ counter)));
+            counter = counter+3;
         }
     }//end of generateDeck
 
@@ -68,7 +84,8 @@ public class BaccaratDealer {
 
     //dealHand will deal two cards and return them in an ArrayList<Card>.
     public ArrayList<Card> dealHand(){
-        /*cases:
+        
+    	/*cases:
             //case1 : No deck
                     -generate the deck
                     -shuffle the deck
