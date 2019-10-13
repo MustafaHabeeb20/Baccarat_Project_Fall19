@@ -23,9 +23,12 @@ public class Card {
 
     String suite;   //4 suits
     int value;      //Face value of each card 1-13
+    String cardImageName;
 
-     Card(String theSuite, int theValue){
+     Card(String theSuite, int theValue, String TheCardImageName){
         this.suite = theSuite;        //(this.) is used to reference to the current object
         this.value = theValue;
+        this.cardImageName = TheCardImageName;
     }
+
 }
