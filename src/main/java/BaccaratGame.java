@@ -1,14 +1,17 @@
 import java.util.*;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,6 +25,7 @@ public class BaccaratGame extends Application {
 	BaccaratGameLogic gameLogic;
 	double currentBet;
 	double totalWinnings;
+	boolean gameDone;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -38,40 +42,76 @@ public class BaccaratGame extends Application {
 	      theDealer = new BaccaratDealer();
 	      playerHand = new ArrayList<>();
 	      bankerHand = new ArrayList<>();
+		  PauseTransition pause = new PauseTransition(Duration.seconds(2));
 	      
-	      VBox vBoxRight = new VBox(); // this vertical box will hold the cards in the right box
-	      VBox vBoxLeft = new VBox();
-	      
-	      // All of the nodes that are in the bottom pane
+	      /* USED FOR TESTING IF PLAYER GETS W THEN WHAT HAPPENS
+	      	Card test6 = new Card("Spades" , 6, "6H.png");
+	      	Card test2 = new Card("Spades" , 2, "2H.png");
+		  */
+		  
+		  // create the dealer object and create the deck of Cards
+	      theDealer.generateDeck();
+	      theDealer.shuffleDeck();
+	      // Give both the player and the banker their hands
+	      playerHand = theDealer.dealHand();
+	      bankerHand = theDealer.dealHand();
+
+
+	      // NODES IN THE BOTTOM PANE
 	      Button startButton = new Button("Start the Round!");
 	      TextField amtToBid = new TextField();
 	      Button bidButton = new Button("Bid!");
 	      Button playerButton = new Button("Player");
 	      Button bankerButton = new Button("Banker");
 	      Button drawButton = new Button("Draw");
+		  
+	      // NODE IN THE CENTER PANE
+	      ListView<String> listView = new ListView<String>();
+	      listView.getItems().add("Suh dude");
+	      listView.setPrefWidth(20);
+	      listView.setPrefHeight(200);
 	      
-	      // create the dealer object and create the deck of Cards
-	      theDealer.generateDeck();
-	      theDealer.shuffleDeck();
-	      
-	      // Give both the player and the banker their hands
-	      playerHand = theDealer.dealHand();
-	      bankerHand = theDealer.dealHand();
-	      
-	      // Connect the banker's and player's respective cards to the image of that card
+	      // NODES IN RIGHT AND LEFT PANE, and set to invisible for now
 	      Image bankerCard1 = new Image(bankerHand.get(0).cardImageName);
 		  ImageView bCard1 = new ImageView(bankerCard1);
+		  bCard1.setVisible(false);
 		  
 		  Image bankerCard2 = new Image(bankerHand.get(1).cardImageName);
 		  ImageView bCard2 = new ImageView(bankerCard2);
+		  bCard2.setVisible(false);
 		  
 		  Image playerCard1 = new Image(playerHand.get(0).cardImageName);
 		  ImageView pCard1 = new ImageView(playerCard1);
+		  pCard1.setVisible(false);
 		  
 		  Image playerCard2 = new Image(playerHand.get(1).cardImageName);
 		  ImageView pCard2 = new ImageView(playerCard2);
-		  
+		  pCard2.setVisible(false);
 	      
+	      // **** ALL THE RESPECTIVE VERTICAL AND HORIZONTAL BOXES IN THE BORDERPANE ****
+	      VBox vBoxCenter = new VBox();
+	      vBoxCenter.setStyle("-fx-background-color: #389800");
+	      vBoxCenter.getChildren().add(listView);
+	      
+	      VBox vBoxRight = new VBox(); // this vertical box will hold the cards in the right box
+	      vBoxRight.setStyle("-fx-background-color: #5CB529;");
+	      
+	      VBox vBoxLeft = new VBox();
+	      vBoxLeft.setStyle("-fx-background-color: #5CB529;");
+	      
+
+	      // create a horizontal box which will hold all the nodes in the bottom pane
+	      HBox hBox = new HBox(startButton, playerButton, bankerButton, drawButton, amtToBid, bidButton);
+	      hBox.setStyle("-fx-background-color: #38661D;");
+	      
+	      hBox.setSpacing(30);
+	      
+		  // add the cards into the respective vertical boxes, but keep them hidden.
+		  vBoxLeft.getChildren().add(pCard1);	    		  
+		  vBoxLeft.getChildren().add(pCard2);
+	      
+		  vBoxRight.getChildren().add(bCard1);
+		  vBoxRight.getChildren().add(bCard2);
 
 	      // Set all the buttons to NOT visible until the start button is pressed 
 	      setBottomPaneNodesToNotVisible( amtToBid, bidButton, playerButton, bankerButton, drawButton);
@@ -110,32 +150,47 @@ public class BaccaratGame extends Application {
 	    	  }
 	      });
 	      
-	      // create a horizontal box which will hold all the nodes in the bottom pane
-	      HBox hBox = new HBox(startButton, playerButton, bankerButton, drawButton, amtToBid, bidButton);
-	      
-	      hBox.setSpacing(30);
 	      bidButton.setPadding(new Insets(20,20,20,20)); // ?? kinda weird	      
 	      
 	      // Hide the cards until the Bid Button is pressed, then show them
 	      bidButton.setOnAction(new EventHandler<ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
+	    		  
+	    		  // check if the input is a number 
 	    		  if(isNumeric(amtToBid.getText())) {
-	    			  vBoxLeft.getChildren().add(pCard1);	    		  
-		    		  vBoxLeft.getChildren().add(pCard2);
-		    		  
-		    		  vBoxRight.getChildren().add(bCard1);
-		    		  vBoxRight.getChildren().add(bCard2);
+	    			  currentBet = Double.parseDouble(amtToBid.getText()); // save the amount of money that was bid
+		    		  pCard1.setVisible(true);
+		    		  pCard2.setVisible(true);
+		    		
+		    		  pause.setOnFinished(new EventHandler <ActionEvent>() {
+		    			  public void handle(ActionEvent action) {
+		    				  bCard1.setVisible(true);
+		    				  bCard2.setVisible(true);
+		    			  }
+		    		  });
+		    		  pause.play();
 		    		  
 		    		  }
 	    		  else {
 	    			  amtToBid.setText("Input a Number!");
-	    		  }
+	    		  } 
 	    		  
+	    		  // ******* Code on what happens to after the initial two cards are given out **********
+	    	      if(pCard1.isVisible()) { // check the banker card because that means all the cards are for sure presented
+	    	    	  // first scenario: either the player or the banker got 8 or 9, making it a "natural win" **NOT WORKING RIGHT NOW***
+	    	    	  if(gameLogic.handTotal(playerHand) == 8 || gameLogic.handTotal(playerHand) == 9) {
+		    	    	  listView.getItems().add("The player won the round!!");
+	    	    	  }  
+	    	      }
 
 	    	  }
 	      });
+	      
+
+	     
 		  
-	      bPane.setLeft(vBoxLeft);
+	      bPane.setCenter(vBoxCenter);
+	      bPane.setLeft(vBoxLeft); // player hand
 	      bPane.setRight(vBoxRight); // Banker Hand
 	      bPane.setBottom(hBox); // Game Controls
 	      
@@ -143,7 +198,7 @@ public class BaccaratGame extends Application {
 	      Scene scene = new Scene(bPane, 700, 700);  
 	      
 	      //Setting title to the Stage
-	      stage.setTitle("BorderPane Example"); 
+	      stage.setTitle("Baccarat Game"); 
 	         
 	      //Adding scene to the stage 
 	      stage.setScene(scene);          
