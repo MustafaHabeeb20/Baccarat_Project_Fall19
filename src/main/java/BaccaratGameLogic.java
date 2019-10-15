@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 
 
-    public class BaccaratGameLogic {
+ public class BaccaratGameLogic {
 
     //The method whoWon will evaluate two hands at the end of the game and return a string
     //depending on the winner: “Player”, “Banker”, “Draw”.
@@ -47,10 +47,14 @@ import java.util.ArrayList;
         for(int i = 0; i < hand.size(); i++) {
 
             //Have to block out values of 10 & Face Cards
+            //Have to block out double digits numbers
             if(hand.get(i).value < 10){
                 sum += hand.get(i).value;
             }
         }
+
+        sum = sum % 10;   //9 + 6 = 15 % 10 = 5
+
         return sum;
     }//End of handtotal
 
@@ -70,14 +74,15 @@ import java.util.ArrayList;
            // another card and if so, the value of that card to determine if The Banker receives another card. look at PDF
 
            //if the Player does not draw a card,
-           if(playerCard == null){
-               if(handTotal(hand) <= 5){
+           if(handTotal(hand) <= 5){
+               if(playerCard == null){
                    return true;
                }
            }
 
            //if the bankers point value is 3 && playerCard is not 8
            else if((handTotal(hand) == 3) && (playerCard.value != 8)){
+               //playerCard.value == 0 || playerCard.value == 1 || playerCard.value == 2 || playerCard.value == 3 || playerCard.value == 4 || playerCard.value == 5 || playerCard.value == 6 || playerCard.value == 7 || playerCard.value == 9)
                return true;
            }
 

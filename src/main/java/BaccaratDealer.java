@@ -11,19 +11,23 @@ public class BaccaratDealer {
     String Clubs = "Clubs";
     String Hearts = "Hearts";
     String Diamonds = "Diamonds";
-    
-    
+
+
     // Names of all the images of the cards
     ArrayList<String> cards = new ArrayList<>(Arrays.asList(
-    		"1S.png", "1C.png", "1H.png", "1D.png", 
-    		"2S.png", "2C.png", "2H.png", "2D.png", 
-    		"3S.png", "3C.png", "3H.png", "3D.png", 
-    		"4S.png", "4C.png", "4H.png", "4D.png", 
-    		"5S.png", "5C.png", "5H.png", "5D.png", 
-    		"6S.png", "6C.png", "6H.png", "6D.png", "7S.png", "7C.png", "7H.png", "7D.png", "8S.png", "8C.png", 
-    		"8H.png", "8D.png", "9S.png", "9C.png", "9H.png", "9D.png", "10S.png", "10C.png", "10H.png", "10D.png", 
-    		"11S.png", "11C.png", "11H.png", "11D.png", "12S.png", "12C.png", "12H.png", "12D.png", "13S.png", "13C.png", 
-    		"13H.png", "13D.png"
+            "1S.png", "1C.png", "1H.png", "1D.png",
+            "2S.png", "2C.png", "2H.png", "2D.png",
+            "3S.png", "3C.png", "3H.png", "3D.png",
+            "4S.png", "4C.png", "4H.png", "4D.png",
+            "5S.png", "5C.png", "5H.png", "5D.png",
+            "6S.png", "6C.png", "6H.png", "6D.png",
+            "7S.png", "7C.png", "7H.png", "7D.png",
+            "8S.png", "8C.png", "8H.png", "8D.png",
+            "9S.png", "9C.png", "9H.png", "9D.png",
+            "10S.png", "10C.png", "10H.png", "10D.png",
+            "11S.png", "11C.png", "11H.png", "11D.png",
+            "12S.png", "12C.png", "12H.png", "12D.png",
+            "13S.png", "13C.png", "13H.png", "13D.png"
     ));
 
     //generate the deck using the Card class
@@ -56,7 +60,6 @@ public class BaccaratDealer {
             //case1 : No deck
                     -generate the deck
                     -shuffle the deck
-
            //case2: Else just draw A card
         */
 
@@ -84,18 +87,15 @@ public class BaccaratDealer {
 
     //dealHand will deal two cards and return them in an ArrayList<Card>.
     public ArrayList<Card> dealHand(){
-        
+
     	/*cases:
             //case1 : No deck
                     -generate the deck
                     -shuffle the deck
-
             //case2 : if there is 1 card left in the deck
                     -should we account for this case of should we always
                      generate and shuffle the deck every time?
-
                      answer: taken care of cause, drawOne
-
            //case3: Else just draw 2 cards
         */
 
@@ -106,7 +106,7 @@ public class BaccaratDealer {
 
         //get the second card
         DealerorPlayer.add(drawOne());
-        
+
         return DealerorPlayer;
     }//End of dealHand
 }
