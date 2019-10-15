@@ -1,18 +1,18 @@
-import java.util.*;
-
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class BaccaratGame extends Application {
 	
@@ -70,7 +70,7 @@ public class BaccaratGame extends Application {
 		  
 		  Image playerCard2 = new Image(playerHand.get(1).cardImageName);
 		  ImageView pCard2 = new ImageView(playerCard2);
-		  
+		  //lkjjojojojojo
 	      
 
 	      // Set all the buttons to NOT visible until the start button is pressed 
