@@ -60,49 +60,81 @@ import java.util.ArrayList;
 
    //The methods evaluateBankerDraw and evaluatePlayerDraw will return true if
    //either one should be dealt a third card otherwise return false.
-   public boolean evaluateBankerDraw(ArrayList<Card> hand, Card playerCard){
+   public boolean evaluateBankerDraw(ArrayList<Card> hand, Card playerCard) {
        //if the bankers first two cards total 7 or more, no more cards are dealt.
-       if(handTotal(hand) >= 7){
+       if (handTotal(hand) >= 7) {
            return false;
        }
        //If The Banker’s cards total 2 or less, The Banker gets one additional card.
-       if(handTotal(hand) <= 2){
+       if (handTotal(hand) <= 2) {
            return true;
        }
-       else{
+       else {
            //If The Bankers first two cards total 3, 4, 5, or 6, it depends on if The Player drew
            // another card and if so, the value of that card to determine if The Banker receives another card. look at PDF
 
            //if the Player does not draw a card,
-           if(handTotal(hand) <= 5){
-               if(playerCard == null){
-                   return true;
-               }
+           if ((handTotal(hand) <= 5) && (playerCard == null)) {
+               return true;
            }
 
            //if the bankers point value is 3 && playerCard is not 8
-           else if((handTotal(hand) == 3) && (playerCard.value != 8)){
-               //playerCard.value == 0 || playerCard.value == 1 || playerCard.value == 2 || playerCard.value == 3 || playerCard.value == 4 || playerCard.value == 5 || playerCard.value == 6 || playerCard.value == 7 || playerCard.value == 9)
-               return true;
+           if ((handTotal(hand) == 3)) {
+               switch (playerCard.value) {
+
+                   case 8:
+                       return false;
+                   default:
+                       return true;
+               }
            }
 
            //if the bankers point value is 4 && playerCard that is not 0, 1, 8 or 9
-           else if((handTotal(hand) == 4) && (playerCard.value != 0 || playerCard.value != 1 || playerCard.value != 8 || playerCard.value != 9 )){
-               return true;
+           if ((handTotal(hand) == 4)) {
+               switch (playerCard.value) {
+
+                   case 0:
+                       return false;
+                   case 1:
+                       return false;
+                   case 8:
+                       return false;
+                   case 9:
+                       return false;
+                   default:
+                       return true;
+               }
            }
 
            //if the bankers point value is 5 && the playerCard either DNE (null or > 0), or values 4-7 including 4 and 7.
            //NOTE**cant do playerCard.value == null because not an int
-           else if((handTotal(hand) == 5) && (playerCard.value > 0 || (playerCard.value <=4 && playerCard.value >= 7))){
-               return true;
+           if ((handTotal(hand) == 5)) {
+               switch (playerCard.value) {
+
+                   case 4:
+                       return true;
+                   case 5:
+                       return true;
+                   case 6:
+                       return true;
+                   case 7:
+                       return true;
+                   default:
+                       return false;
+               }
            }
 
            //if the bankers point value is 6  && playerCard == 6 || 7
-           else if((handTotal(hand) == 6) && (playerCard.value == 6 || playerCard.value == 7)) {
-               return true;
-           }
-           else{
-               return false;
+           if ((handTotal(hand) == 6) && playerCard != null) {
+               switch (playerCard.value) {
+
+                   case 6:
+                       return true;
+                   case 7:
+                       return true;
+                   default:
+                       return false;
+               }
            }
        }
        return false;

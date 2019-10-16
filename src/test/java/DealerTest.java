@@ -498,24 +498,177 @@ class DealerTest {
 
         //Hand is 3  && accept every value but 8 --> TRUE
         assertTrue(BGL.evaluateBankerDraw(Hand, null));
-        //assertTrue(BGL.evaluateBankerDraw(Hand, aceHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, twoHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, threeHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, fourHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, fiveHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, sixHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, sevenHearts));
-//        assertTrue(BGL.evaluateBankerDraw(Hand, nineHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, aceHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, twoHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, threeHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, fourHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, fiveHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sixHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sevenHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, nineHearts));
+
 
         assertFalse(BGL.evaluateBankerDraw(Hand, eightHearts));
 
     }
 
+    //test 30
+    @Test
+    void testBGLevalBankDraw7(){
+        BaccaratGameLogic BGL = new BaccaratGameLogic();
 
-//****************************************************************
+        //create cards
+        Card aceSpades = new Card("Spades", 1, "TheCardImageName");
+        Card twoClubs = new Card("Clubs", 2, "TheCardImageName");
+
+        //Card NoCard = new Card("\0", 0, "\0");
+        Card aceHearts = new Card("Hearts", 1, "TheCardImageName");
+        Card twoHearts = new Card("Hearts", 2, "TheCardImageName");
+        Card threeHearts = new Card("Hearts", 3, "TheCardImageName");
+        Card fourHearts = new Card("Hearts", 4, "TheCardImageName");
+        Card fiveHearts = new Card("Hearts", 5, "TheCardImageName");
+        Card sixHearts = new Card("Hearts", 6, "TheCardImageName");
+        Card sevenHearts = new Card("Hearts", 7, "TheCardImageName");
+        Card eightHearts = new Card("Hearts", 8, "TheCardImageName");
+        Card nineHearts = new Card("Hearts", 9, "TheCardImageName");
+        Card tenHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card JackHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card QueenHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card KingHearts = new Card("Hearts", 0, "TheCardImageName");
 
 
-    //test
+        //create a Hand for the cards to go into
+        ArrayList<Card> Hand = new ArrayList<Card>();
+
+        //add to the hand
+        Hand.add(fourHearts);
+        Hand.add(tenHearts);
+
+        //Hand is 4  && accept every value but 0,1,8, and 9  --> TRUE
+        assertTrue(BGL.evaluateBankerDraw(Hand, null));
+        assertTrue(BGL.evaluateBankerDraw(Hand, twoHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, threeHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, fourHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, fiveHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sixHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sevenHearts));
+
+        assertFalse(BGL.evaluateBankerDraw(Hand, tenHearts));      //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, JackHearts));     //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, QueenHearts));    //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, KingHearts));     //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, aceHearts));     //1
+        assertFalse(BGL.evaluateBankerDraw(Hand, eightHearts));   //8
+        assertFalse(BGL.evaluateBankerDraw(Hand, nineHearts));    //9
+
+
+    }
+
+    //test 31
+    @Test
+    void testBGLevalBankDraw8(){
+        BaccaratGameLogic BGL = new BaccaratGameLogic();
+
+        //create cards
+        Card aceSpades = new Card("Spades", 1, "TheCardImageName");
+        Card twoClubs = new Card("Clubs", 2, "TheCardImageName");
+
+        //Card NoCard = new Card("\0", 0, "\0");
+        Card aceHearts = new Card("Hearts", 1, "TheCardImageName");
+        Card twoHearts = new Card("Hearts", 2, "TheCardImageName");
+        Card threeHearts = new Card("Hearts", 3, "TheCardImageName");
+        Card fourHearts = new Card("Hearts", 4, "TheCardImageName");
+        Card fiveHearts = new Card("Hearts", 5, "TheCardImageName");
+        Card sixHearts = new Card("Hearts", 6, "TheCardImageName");
+        Card sevenHearts = new Card("Hearts", 7, "TheCardImageName");
+        Card eightHearts = new Card("Hearts", 8, "TheCardImageName");
+        Card nineHearts = new Card("Hearts", 9, "TheCardImageName");
+        Card tenHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card JackHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card QueenHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card KingHearts = new Card("Hearts", 0, "TheCardImageName");
+
+
+        //create a Hand for the cards to go into
+        ArrayList<Card> Hand = new ArrayList<Card>();
+
+        //add to the hand
+        Hand.add(fiveHearts);
+        Hand.add(tenHearts);
+
+        //Hand is 5  && accept values but 4,5,6, and 7  --> TRUE
+        assertTrue(BGL.evaluateBankerDraw(Hand, null));
+        assertTrue(BGL.evaluateBankerDraw(Hand, fourHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, fiveHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sixHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sevenHearts));
+
+        assertFalse(BGL.evaluateBankerDraw(Hand, twoHearts));
+        assertFalse(BGL.evaluateBankerDraw(Hand, threeHearts));
+        assertFalse(BGL.evaluateBankerDraw(Hand, tenHearts));      //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, JackHearts));     //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, QueenHearts));    //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, KingHearts));     //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, aceHearts));     //1
+        assertFalse(BGL.evaluateBankerDraw(Hand, eightHearts));   //8
+        assertFalse(BGL.evaluateBankerDraw(Hand, nineHearts));    //9
+
+
+    }
+
+    //test 32
+    @Test
+    void testBGLevalBankDraw9(){
+        BaccaratGameLogic BGL = new BaccaratGameLogic();
+
+        //create cards
+        Card aceSpades = new Card("Spades", 1, "TheCardImageName");
+        Card twoClubs = new Card("Clubs", 2, "TheCardImageName");
+
+        //Card NoCard = new Card("\0", 0, "\0");
+        Card aceHearts = new Card("Hearts", 1, "TheCardImageName");
+        Card twoHearts = new Card("Hearts", 2, "TheCardImageName");
+        Card threeHearts = new Card("Hearts", 3, "TheCardImageName");
+        Card fourHearts = new Card("Hearts", 4, "TheCardImageName");
+        Card fiveHearts = new Card("Hearts", 5, "TheCardImageName");
+        Card sixHearts = new Card("Hearts", 6, "TheCardImageName");
+        Card sevenHearts = new Card("Hearts", 7, "TheCardImageName");
+        Card eightHearts = new Card("Hearts", 8, "TheCardImageName");
+        Card nineHearts = new Card("Hearts", 9, "TheCardImageName");
+        Card tenHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card JackHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card QueenHearts = new Card("Hearts", 0, "TheCardImageName");
+        Card KingHearts = new Card("Hearts", 0, "TheCardImageName");
+
+
+        //create a Hand for the cards to go into
+        ArrayList<Card> Hand = new ArrayList<Card>();
+
+        //add to the hand
+        Hand.add(sixHearts);
+        Hand.add(tenHearts);
+
+        //Hand is 6 && accept values 6 and 7 --> TRUE
+        assertTrue(BGL.evaluateBankerDraw(Hand, sixHearts));
+        assertTrue(BGL.evaluateBankerDraw(Hand, sevenHearts));
+
+        assertFalse(BGL.evaluateBankerDraw(Hand, null));
+        assertFalse(BGL.evaluateBankerDraw(Hand, fourHearts));
+        assertFalse(BGL.evaluateBankerDraw(Hand, fiveHearts));
+        assertFalse(BGL.evaluateBankerDraw(Hand, twoHearts));
+        assertFalse(BGL.evaluateBankerDraw(Hand, threeHearts));
+        assertFalse(BGL.evaluateBankerDraw(Hand, tenHearts));      //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, JackHearts));     //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, QueenHearts));    //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, KingHearts));     //0
+        assertFalse(BGL.evaluateBankerDraw(Hand, aceHearts));     //1
+        assertFalse(BGL.evaluateBankerDraw(Hand, eightHearts));   //8
+        assertFalse(BGL.evaluateBankerDraw(Hand, nineHearts));    //9
+
+
+    }
+
+    //test 33
     @Test
     void BGLwhoWon1(){
 
@@ -552,7 +705,7 @@ class DealerTest {
 
     }
 
-    //test
+    //test 34
     @Test
     void BGLwhoWon2(){
 
@@ -590,7 +743,7 @@ class DealerTest {
 
     }
 
-    //test
+    //test 35
     @Test
     void BGLwhoWon3(){
 

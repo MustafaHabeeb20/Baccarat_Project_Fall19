@@ -70,7 +70,7 @@ public class BaccaratGame extends Application {
 		  
 		  Image playerCard2 = new Image(playerHand.get(1).cardImageName);
 		  ImageView pCard2 = new ImageView(playerCard2);
-		  //lkjjojojojojo
+
 	      
 
 	      // Set all the buttons to NOT visible until the start button is pressed 
