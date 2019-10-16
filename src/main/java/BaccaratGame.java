@@ -3,8 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -14,6 +13,8 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+//include menu
+
 public class BaccaratGame extends Application {
 	
 	ArrayList<Card> playerHand;
@@ -22,6 +23,14 @@ public class BaccaratGame extends Application {
 	BaccaratGameLogic gameLogic;
 	double currentBet;
 	double totalWinnings;
+
+	//include for menu
+    //private TextField text;
+    private Button btn;
+    VBox paneCenter;
+    Scene scene;
+    MenuBar menu;
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -31,17 +40,36 @@ public class BaccaratGame extends Application {
 	//feel free to remove the starter code from this method
 	@Override
 	public void start(Stage stage) throws Exception {
-		
+
+        // set title for the stage
+        stage.setTitle("creating MenuBar");
+
+	    //Create a Menu to have Options and withing options have EXIT & FRESH START
+        menu = new MenuBar();
+
+        Menu Options = new Menu("Options");
+
+        Options.getItems().add(new MenuItem("Exit"));
+        Options.getItems().add(new MenuItem("Fresh Start"));
+
+        menu.getMenus().addAll(Options);
+
+        //*****************************
 		
 		  //Instantiating the BorderPane along with the other objects
-	      BorderPane bPane = new BorderPane(); 
+	      BorderPane bPane = new BorderPane();
+
 	      theDealer = new BaccaratDealer();
 	      playerHand = new ArrayList<>();
 	      bankerHand = new ArrayList<>();
 	      
 	      VBox vBoxRight = new VBox(); // this vertical box will hold the cards in the right box
 	      VBox vBoxLeft = new VBox();
-	      
+
+	      //***********************MH
+	      //All of the nodes in the top pane
+          Button OptionsButton = new Button("Options");
+
 	      // All of the nodes that are in the bottom pane
 	      Button startButton = new Button("Start the Round!");
 	      TextField amtToBid = new TextField();
@@ -71,8 +99,6 @@ public class BaccaratGame extends Application {
 		  Image playerCard2 = new Image(playerHand.get(1).cardImageName);
 		  ImageView pCard2 = new ImageView(playerCard2);
 
-	      
-
 	      // Set all the buttons to NOT visible until the start button is pressed 
 	      setBottomPaneNodesToNotVisible( amtToBid, bidButton, playerButton, bankerButton, drawButton);
 	      
@@ -93,6 +119,11 @@ public class BaccaratGame extends Application {
 	      playerButton.setOnAction(new EventHandler <ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
 	    		  bidButton.setDisable(false);
+
+				  //Disable other buttons once you chosen what to bid on
+				  bankerButton.setDisable(true);
+				  drawButton.setDisable(true);
+
 	    	  }
 	      });
 	      
@@ -100,6 +131,10 @@ public class BaccaratGame extends Application {
 	      bankerButton.setOnAction(new EventHandler <ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
 	    		  bidButton.setDisable(false);
+
+				  //Disable other buttons once you chosen what to bid on
+				  playerButton.setDisable(true);
+				  drawButton.setDisable(true);
 	    	  }
 	      });
 	      
@@ -107,6 +142,10 @@ public class BaccaratGame extends Application {
 	      drawButton.setOnAction(new EventHandler <ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
 	    		  bidButton.setDisable(false);
+
+	    		  //Disable other buttons once you chosen what to bid on
+	    		  playerButton.setDisable(true);
+				  bankerButton.setDisable(true);
 	    	  }
 	      });
 	      
@@ -140,10 +179,10 @@ public class BaccaratGame extends Application {
 	      bPane.setBottom(hBox); // Game Controls
 	      
 	      //Creating a scene object 
-	      Scene scene = new Scene(bPane, 700, 700);  
+	      Scene scene = new Scene(bPane, 700, 700 );
 	      
 	      //Setting title to the Stage
-	      stage.setTitle("BorderPane Example"); 
+	      stage.setTitle("Baccarat Game");
 	         
 	      //Adding scene to the stage 
 	      stage.setScene(scene);          
@@ -165,9 +204,9 @@ public class BaccaratGame extends Application {
 	      drawButton.setVisible(false);
 	}
 	void setBottomPaneNodesToVisible(
-			TextField amtToBid, 
-			Button bidButton, 
-			Button playerButton, 
+			TextField amtToBid,
+			Button bidButton,
+			Button playerButton,
 			Button bankerButton,
 			Button drawButton) {
 		  amtToBid.setVisible(true);

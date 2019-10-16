@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8548e4cb-c734-4fef-b3e0-aa42939d6782" name="Default Changelist" comment="&quot;push oct 15&quot;">
+    <list default="true" id="8548e4cb-c734-4fef-b3e0-aa42939d6782" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BaccaratGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaccaratGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DealerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DealerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BaccaratGameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BaccaratGameLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BaccaratGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BaccaratGame.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+            <state relative-caret-position="-619">
+              <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -45,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratDealer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
+            <state relative-caret-position="1440">
               <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
             </state>
           </provider>
@@ -54,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-174">
-              <caret line="121" column="27" lean-forward="true" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
+            <state relative-caret-position="1815">
+              <caret line="121" column="27" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -63,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DealerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="767" column="28" lean-forward="true" selection-start-line="767" selection-start-column="28" selection-end-line="767" selection-end-column="28" />
+            <state relative-caret-position="11505">
+              <caret line="767" column="28" selection-start-line="767" selection-start-column="28" selection-end-line="767" selection-end-column="28" />
               <folding>
                 <marker date="1571185461895" expanded="true" signature="14800:15166" ph="..." />
               </folding>
@@ -90,9 +88,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Card.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaccaratDealer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaccaratGame.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java" />
         <option value="$PROJECT_DIR$/src/test/java/DealerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaccaratGame.java" />
       </list>
     </option>
   </component>
@@ -106,7 +104,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,7 +147,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571163492837</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="&quot;push oct 15 7:40pm&quot;">
+      <created>1571186456770</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1571186456770</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -332,7 +337,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14041515" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -346,7 +351,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2377551" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16734694" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.25714287" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.6142857" />
@@ -407,9 +412,17 @@
     <MESSAGE value="comment in help" />
     <MESSAGE value="comment in bgame" />
     <MESSAGE value="&quot;push oct 15&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;push oct 15&quot;" />
+    <MESSAGE value="&quot;push oct 15 7:40pm&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;push oct 15 7:40pm&quot;" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-619">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -419,32 +432,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratDealer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
+        <state relative-caret-position="1440">
           <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="121" column="27" lean-forward="true" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
+        <state relative-caret-position="1815">
+          <caret line="121" column="27" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DealerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="767" column="28" lean-forward="true" selection-start-line="767" selection-start-column="28" selection-end-line="767" selection-end-column="28" />
+        <state relative-caret-position="11505">
+          <caret line="767" column="28" selection-start-line="767" selection-start-column="28" selection-end-line="767" selection-end-column="28" />
           <folding>
             <marker date="1571185461895" expanded="true" signature="14800:15166" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
         </state>
       </provider>
     </entry>
