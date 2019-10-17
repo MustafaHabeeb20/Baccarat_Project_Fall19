@@ -1,25 +1,20 @@
 
-import java.util.*;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
-import javafx.util.Duration;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.util.ArrayList;
 
 public class BaccaratGame extends Application {
 	
@@ -42,8 +37,8 @@ public class BaccaratGame extends Application {
 	//feel free to remove the starter code from this method
 	@Override
 	public void start(Stage stage) throws Exception {
-		System.out.print("yooo");
-		/*
+		//System.out.print("yooo");
+
 		// set title for the stage
         stage.setTitle("creating MenuBar");
 
@@ -85,17 +80,22 @@ public class BaccaratGame extends Application {
         });
 
         menu.getMenus().addAll(Options);
+
+		/*
+		|
+		|  menu above
+		|
+		|
+		 */
 		
-		*/
-		
-		
-		
-		
-	
-		
-		
+
 		  //Instantiating the BorderPane along with the other objects
-	      BorderPane bPane = new BorderPane(); 
+	      BorderPane bPane = new BorderPane();
+
+	      //added for the menu
+	      bPane.setTop(menu);
+
+	      //for the bottom pane options
 	      theDealer = new BaccaratDealer();
 	      gameLogic = new BaccaratGameLogic();
 	      playerHand = new ArrayList<>();
@@ -219,35 +219,48 @@ public class BaccaratGame extends Application {
 		  vBoxRight.getChildren().add(bCard1);
 		  vBoxRight.getChildren().add(bCard2);
 
-	      		  
-	      // When either Player, Banker, or Draw is selected then allow the Bid to be pressed
-	      
-	      // when the player button is pressed...
-	      playerButton.setOnAction(new EventHandler <ActionEvent>() {
-	    	  public void handle(ActionEvent action) {
-	    		  bidButton.setDisable(false);
-	    		  optionSelected = playerButton.getText();
-	    		  
-	    	  }
-	      });
-	      
-	      // or when the banker button is pressed...
-	      bankerButton.setOnAction(new EventHandler <ActionEvent>() {
-	    	  public void handle(ActionEvent action) {
-	    		  bidButton.setDisable(false);
-	    		  optionSelected = bankerButton.getText();
 
-	    	  }
-	      });
-	      
-	      // or when the draw button is pressed...
-	      drawButton.setOnAction(new EventHandler <ActionEvent>() {
-	    	  public void handle(ActionEvent action) {
-	    		  bidButton.setDisable(false);
-	    		  optionSelected = drawButton.getText();
+		// When either Player, Banker, or Draw is selected then allow the Bid to be pressed
 
-	    	  }
-	      });
+		// when the player button is pressed...
+		playerButton.setOnAction(new EventHandler <ActionEvent>() {
+			public void handle(ActionEvent action) {
+				startButton.setDisable(true);
+
+				bidButton.setDisable(false);
+
+				//Disable other buttons once you chosen what to bid on
+				bankerButton.setDisable(true);
+				drawButton.setDisable(true);
+
+			}
+		});
+
+		// or when the banker button is pressed...
+		bankerButton.setOnAction(new EventHandler <ActionEvent>() {
+			public void handle(ActionEvent action) {
+				startButton.setDisable(true);
+
+				bidButton.setDisable(false);
+
+				//Disable other buttons once you chosen what to bid on
+				playerButton.setDisable(true);
+				drawButton.setDisable(true);
+			}
+		});
+
+		// or when the draw button is pressed...
+		drawButton.setOnAction(new EventHandler <ActionEvent>() {
+			public void handle(ActionEvent action) {
+				startButton.setDisable(true);
+
+				bidButton.setDisable(false);
+
+				//Disable other buttons once you chosen what to bid on
+				playerButton.setDisable(true);
+				bankerButton.setDisable(true);
+			}
+		});
 	      
 	      bidButton.setPadding(new Insets(20,20,20,20)); // ?? kinda weird	      
 	      
