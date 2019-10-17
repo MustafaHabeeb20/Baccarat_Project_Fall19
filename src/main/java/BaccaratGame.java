@@ -100,7 +100,7 @@ public class BaccaratGame extends Application {
 	      gameLogic = new BaccaratGameLogic();
 	      playerHand = new ArrayList<>();
 	      bankerHand = new ArrayList<>();
-		  PauseTransition pause = new PauseTransition(Duration.seconds(2));
+		  PauseTransition pause = new PauseTransition(Duration.seconds(2)); //5 secs
 	      
 	     // USED FOR TESTING IF PLAYER GETS W THEN WHAT HAPPENS
 	      	Card test6 = new Card("Spades" , 6, "6H.png");
