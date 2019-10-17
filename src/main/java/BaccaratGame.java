@@ -59,18 +59,25 @@ public class BaccaratGame extends Application {
             }
         });
 
+        MenuItem freshStart = new MenuItem("Fresh Start");
 
-//        Options.getItems().add(new MenuItem("Fresh Start"));
-//        MenuItem freshStart = new MenuItem("Fresh Start");
-//
-//        Options.getItems().add(freshStart);
-//
-//        freshStart.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                stage.NEED TO FIGURE THIS PART OUT *********************
-//            }
-//        });
+        Options.getItems().add(freshStart);
+
+        freshStart.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //https://www.w3schools.com/java/java_try_catch.asp
+                //https://www.geeksforgeeks.org/throwable-printstacktrace-method-in-java-with-examples/
+                //notation for try catch
+
+                try {
+                    start(stage);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
 
         menu.getMenus().addAll(Options);
 
