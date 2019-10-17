@@ -25,10 +25,9 @@ public class BaccaratGame extends Application {
 	double totalWinnings;
 
 	//include for menu
-    //private TextField text;
-    private Button btn;
-    VBox paneCenter;
-    Scene scene;
+//    private Button btn;
+//    VBox paneCenter;
+//    Scene scene;
     MenuBar menu;
 
 	
@@ -48,9 +47,30 @@ public class BaccaratGame extends Application {
         menu = new MenuBar();
 
         Menu Options = new Menu("Options");
+        MenuItem exit = new MenuItem("Exit");
 
-        Options.getItems().add(new MenuItem("Exit"));
-        Options.getItems().add(new MenuItem("Fresh Start"));
+
+        Options.getItems().add(exit);
+
+        exit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                stage.close();
+            }
+        });
+
+
+//        Options.getItems().add(new MenuItem("Fresh Start"));
+//        MenuItem freshStart = new MenuItem("Fresh Start");
+//
+//        Options.getItems().add(freshStart);
+//
+//        freshStart.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                stage.NEED TO FIGURE THIS PART OUT *********************
+//            }
+//        });
 
         menu.getMenus().addAll(Options);
 
@@ -58,6 +78,8 @@ public class BaccaratGame extends Application {
 		
 		  //Instantiating the BorderPane along with the other objects
 	      BorderPane bPane = new BorderPane();
+
+	      bPane.setTop(menu);
 
 	      theDealer = new BaccaratDealer();
 	      playerHand = new ArrayList<>();
@@ -68,7 +90,7 @@ public class BaccaratGame extends Application {
 
 	      //***********************MH
 	      //All of the nodes in the top pane
-          Button OptionsButton = new Button("Options");
+          //Button OptionsButton = new Button("Options");
 
 	      // All of the nodes that are in the bottom pane
 	      Button startButton = new Button("Start the Round!");
@@ -118,6 +140,8 @@ public class BaccaratGame extends Application {
 	      // when the player button is pressed...
 	      playerButton.setOnAction(new EventHandler <ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
+	    	  	  startButton.setDisable(true);
+
 	    		  bidButton.setDisable(false);
 
 				  //Disable other buttons once you chosen what to bid on
@@ -130,7 +154,9 @@ public class BaccaratGame extends Application {
 	      // or when the banker button is pressed...
 	      bankerButton.setOnAction(new EventHandler <ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
-	    		  bidButton.setDisable(false);
+				  startButton.setDisable(true);
+
+	    	  	  bidButton.setDisable(false);
 
 				  //Disable other buttons once you chosen what to bid on
 				  playerButton.setDisable(true);
@@ -141,7 +167,9 @@ public class BaccaratGame extends Application {
 	      // or when the draw button is pressed...
 	      drawButton.setOnAction(new EventHandler <ActionEvent>() {
 	    	  public void handle(ActionEvent action) {
-	    		  bidButton.setDisable(false);
+				  startButton.setDisable(true);
+
+	    	  	  bidButton.setDisable(false);
 
 	    		  //Disable other buttons once you chosen what to bid on
 	    		  playerButton.setDisable(true);
