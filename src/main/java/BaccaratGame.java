@@ -1,4 +1,3 @@
-
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -103,8 +102,8 @@ public class BaccaratGame extends Application {
 		  PauseTransition pause = new PauseTransition(Duration.seconds(2)); //5 secs
 //
 ////	     // USED FOR TESTING IF PLAYER GETS W THEN WHAT HAPPENS
-//	      	Card test6 = new Card("Spades" , 6, "6H.png");
-//	      	Card test2 = new Card("Spades" , 2, "2H.png");
+	      	Card test6 = new Card("Spades" , 6, "6H.png");
+	      	Card test2 = new Card("Spades" , 2, "2H.png");
 ////
 
 		  // create the dealer object and create the deck of Cards
@@ -113,11 +112,11 @@ public class BaccaratGame extends Application {
 
 //	      // Give both the player and the banker their hands
 //	      //playerHand = theDealer.dealHand();
-//	      playerHand.add(test2);
-//	      playerHand.add(test6);
+	      playerHand.add(test2);
+	      playerHand.add(test6);
 
 		  //change to both player and banker geting random cards
-		  playerHand = theDealer.dealHand();
+		  //playerHand = theDealer.dealHand();
 	      bankerHand = theDealer.dealHand();
 
 
@@ -218,6 +217,7 @@ public class BaccaratGame extends Application {
 
 	    	      }
 	    	      forFirstRun++;
+	    	      
 	    	  }
 	      
 	      });
@@ -234,13 +234,9 @@ public class BaccaratGame extends Application {
 		// when the player button is pressed...
 		playerButton.setOnAction(new EventHandler <ActionEvent>() {
 			public void handle(ActionEvent action) {
-				startButton.setDisable(true);
-
+				optionSelected = playerButton.getText();
 				bidButton.setDisable(false);
 
-				//Disable other buttons once you chosen what to bid on
-				bankerButton.setDisable(true);
-				drawButton.setDisable(true);
 
 			}
 		});
@@ -248,26 +244,19 @@ public class BaccaratGame extends Application {
 		// or when the banker button is pressed...
 		bankerButton.setOnAction(new EventHandler <ActionEvent>() {
 			public void handle(ActionEvent action) {
-				startButton.setDisable(true);
-
+				optionSelected = bankerButton.getText();
 				bidButton.setDisable(false);
 
-				//Disable other buttons once you chosen what to bid on
-				playerButton.setDisable(true);
-				drawButton.setDisable(true);
 			}
 		});
 
 		// or when the draw button is pressed...
 		drawButton.setOnAction(new EventHandler <ActionEvent>() {
 			public void handle(ActionEvent action) {
-				startButton.setDisable(true);
+				optionSelected = drawButton.getText();
 
 				bidButton.setDisable(false);
 
-				//Disable other buttons once you chosen what to bid on
-				playerButton.setDisable(true);
-				bankerButton.setDisable(true);
 			}
 		});
 	      
@@ -326,7 +315,7 @@ public class BaccaratGame extends Application {
 
 								  //Options selected is the option the USER chooses of who to bet on ** WERE NOT UPDATING IT **
 
-								  //***1) Check ass soon as cards are dealt if there is a natural win
+								  //***1) Check as soon as cards are dealt if there is a natural win
 								  if((valueOfPlayerHand == 8 || valueOfPlayerHand == 9) || (valueOfBankerHand == 8 || valueOfBankerHand == 9)){
 
 								  	if(resultPBD == "Player"){
