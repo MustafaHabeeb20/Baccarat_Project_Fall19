@@ -25,6 +25,21 @@ import java.util.ArrayList;
 
  public class BaccaratGameLogic {
 
+//
+//     public boolean naturalWin(ArrayList<Card> Player, ArrayList<Card> Banker){
+//
+//         int PTOTAL1 = handTotal(Player);
+//         int BTOTAL2 = handTotal(Banker);
+//
+//         if((PTOTAL1 == 8 || PTOTAL1 == 9)){
+//             if()
+//         }
+//         if(BTOTAL2 == 8 || BTOTAL2 == 9){
+//             return false;
+//         }
+//
+//     }
+
     //The method whoWon will evaluate two hands at the end of the game and return a string
     //depending on the winner: “Player”, “Banker”, “Draw”.
     public String whoWon(ArrayList<Card> hand1, ArrayList<Card> hand2){

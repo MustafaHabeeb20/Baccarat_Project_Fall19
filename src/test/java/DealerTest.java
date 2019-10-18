@@ -358,6 +358,28 @@ class DealerTest {
 
     //test 24
     @Test
+    void testBGLevalPlayerDraw4(){
+        BaccaratGameLogic BGL = new BaccaratGameLogic();
+
+        //create cards
+        Card sixSpades = new Card("Spades", 6, "TheCardImageName");
+        Card QueenHearts = new Card("Hearts", 0, "TheCardImageName");
+
+        //create a Hand for the cards to go into
+        ArrayList<Card> Hand = new ArrayList<Card>();
+
+        //add to the hand
+        Hand.add(QueenHearts);
+        Hand.add(sixSpades);
+
+        //Should accept less than 7
+        //6+ 0 = 6 TRUE
+        assertTrue(BGL.evaluatePlayerDraw(Hand));
+
+    }
+
+    //test 25
+    @Test
     void testBGLevalBankDraw1(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
 
@@ -378,7 +400,7 @@ class DealerTest {
 
     }
 
-    //test 25
+    //test 26
     @Test
     void testBGLevalBankDraw2(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -400,7 +422,7 @@ class DealerTest {
 
     }
 
-    //test 26
+    //test 27
     @Test
     void testBGLevalBankDraw3(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -423,7 +445,7 @@ class DealerTest {
 
     }
 
-    //test 27
+    //test 28
     @Test
     void testBGLevalBankDraw4(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -446,7 +468,7 @@ class DealerTest {
 
     }
 
-    //test 28
+    //test 29
     @Test
     void testBGLevalBankDraw5(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -469,7 +491,7 @@ class DealerTest {
 
     }
 
-    //test 29
+    //test 30
     @Test
     void testBGLevalBankDraw6(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -512,7 +534,7 @@ class DealerTest {
 
     }
 
-    //test 30
+    //test 31
     @Test
     void testBGLevalBankDraw7(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -564,7 +586,7 @@ class DealerTest {
 
     }
 
-    //test 31
+    //test 32
     @Test
     void testBGLevalBankDraw8(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -616,7 +638,7 @@ class DealerTest {
 
     }
 
-    //test 32
+    //test 33
     @Test
     void testBGLevalBankDraw9(){
         BaccaratGameLogic BGL = new BaccaratGameLogic();
@@ -668,7 +690,7 @@ class DealerTest {
 
     }
 
-    //test 33
+    //test 34
     @Test
     void BGLwhoWon1(){
 
@@ -705,7 +727,7 @@ class DealerTest {
 
     }
 
-    //test 34
+    //test 35
     @Test
     void BGLwhoWon2(){
 
@@ -743,7 +765,7 @@ class DealerTest {
 
     }
 
-    //test 35
+    //test 36
     @Test
     void BGLwhoWon3(){
 

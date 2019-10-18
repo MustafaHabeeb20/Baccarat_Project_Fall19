@@ -73,7 +73,7 @@ public class BaccaratGame extends Application {
                 try {
                     start(stage);
                 }
-                catch(Exception e){
+                catch(Exception e){        //FIGURE OUT DIFF WAY
                     e.printStackTrace();
                 }
             }
@@ -101,19 +101,23 @@ public class BaccaratGame extends Application {
 	      playerHand = new ArrayList<>();
 	      bankerHand = new ArrayList<>();
 		  PauseTransition pause = new PauseTransition(Duration.seconds(2)); //5 secs
-	      
-	     // USED FOR TESTING IF PLAYER GETS W THEN WHAT HAPPENS
-	      	Card test6 = new Card("Spades" , 6, "6H.png");
-	      	Card test2 = new Card("Spades" , 2, "2H.png");
-		  
-		  
+//
+////	     // USED FOR TESTING IF PLAYER GETS W THEN WHAT HAPPENS
+//	      	Card test6 = new Card("Spades" , 6, "6H.png");
+//	      	Card test2 = new Card("Spades" , 2, "2H.png");
+////
+
 		  // create the dealer object and create the deck of Cards
 	      theDealer.generateDeck();
 	      theDealer.shuffleDeck();
-	      // Give both the player and the banker their hands
-	      //playerHand = theDealer.dealHand();
-	      playerHand.add(test2);
-	      playerHand.add(test6);
+
+//	      // Give both the player and the banker their hands
+//	      //playerHand = theDealer.dealHand();
+//	      playerHand.add(test2);
+//	      playerHand.add(test6);
+
+		  //change to both player and banker geting random cards
+		  playerHand = theDealer.dealHand();
 	      bankerHand = theDealer.dealHand();
 
 
@@ -151,7 +155,9 @@ public class BaccaratGame extends Application {
 		  Image playerCard2 = new Image(playerHand.get(1).cardImageName);
 		  ImageView pCard2 = new ImageView(playerCard2);
 		  pCard2.setVisible(false);
-	      
+
+
+
 	      // **** ALL THE RESPECTIVE VERTICAL AND HORIZONTAL BOXES IN THE BORDERPANE ****
 	      VBox vBoxCenter = new VBox();
 	      vBoxCenter.setStyle("-fx-background-color: #389800");
@@ -194,6 +200,8 @@ public class BaccaratGame extends Application {
 	    	      bCard1.setVisible(false);
 	    	      pCard2.setVisible(false);
 	    	      bCard2.setVisible(false);
+
+//	    	      pCard3.setVisible(false);  //***********************//
 	    	      
 	    		  Image bankerCard1New = new Image(bankerHand.get(0).cardImageName);
 	    		  bCard1.setImage(bankerCard1New);
@@ -207,18 +215,19 @@ public class BaccaratGame extends Application {
 	    	      Image playerCard2New = new Image(playerHand.get(1).cardImageName);
 	    		  pCard2.setImage(playerCard2New);   
 	    		  bidButton.setDisable(true);
+
 	    	      }
 	    	      forFirstRun++;
 	    	  }
 	      
 	      });
-	      
+
+
 	      // add the cards into the respective vertical boxes, but keep them hidden.
 		  vBoxLeft.getChildren().add(pCard1);	    		  
 		  vBoxLeft.getChildren().add(pCard2);
 		  vBoxRight.getChildren().add(bCard1);
 		  vBoxRight.getChildren().add(bCard2);
-
 
 		// When either Player, Banker, or Draw is selected then allow the Bid to be pressed
 
@@ -270,6 +279,7 @@ public class BaccaratGame extends Application {
 	    		  
 	    		  // check if the input is a number 
 	    		  if(isNumeric(amtToBid.getText())) {
+
 	    			  currentBet = Double.parseDouble(amtToBid.getText()); // save the amount of money that was bid
 		    		  pCard1.setVisible(true);
 		    		  pCard2.setVisible(true);
@@ -283,29 +293,85 @@ public class BaccaratGame extends Application {
 				    	      if(bCard1.isVisible()) { // check the banker card because that means all the cards are for sure presented
 				    	    	 int valueOfPlayerHand = gameLogic.handTotal(playerHand);
 				    	    	 int valueOfBankerHand = gameLogic.handTotal(bankerHand);
-				    	    	 listView.getItems().add("The player total: " + valueOfPlayerHand + " Banker Total: " + valueOfBankerHand );
-				    	    	 
-				    	    	 // first scenario: either the player or the banker got 8 or 9, making it a "natural win" 
-				    	    	  if(valueOfPlayerHand == 8 ||  valueOfPlayerHand == 9) {
-					    	    	  listView.getItems().add("Player Wins");
-					    	    	  if(optionSelected == "Player") {
+				    	    	 listView.getItems().add("The player total: " + valueOfPlayerHand + "                   Banker Total: " + valueOfBankerHand );
+
+				    	    	  //first scenario: either the player or the banker got 8 or 9, making it a "natural win"
+//				    	    	  if(valueOfPlayerHand == 8 ||  valueOfPlayerHand == 9) {
+//					    	    	  listView.getItems().add("Player Wins");
+//					    	    	  if(optionSelected == "Player") {
+//					    	    		  listView.getItems().add("Congrats, you bet Player, you win!");
+//					    	    	  }
+//					    	    	  else {
+//					    	    		  listView.getItems().add("Sorry, you lost loser");
+//					    	    	  }
+//
+//				    	    	  }
+
+								  //listView.getItems(gameLogic.whoWon(playerHand,bankerHand));
+
+//				    	    	  if(valueOfBankerHand == 8 || valueOfBankerHand == 9) {
+//				    	    		  listView.getItems().add("The player total: " + valueOfPlayerHand + " Banker Total: " + valueOfBankerHand );
+//					    	    	  listView.getItems().add("Banker Wins");
+//					    	    	  if(optionSelected == "Banker") {
+//					    	    		  listView.getItems().add("Congrats, you bet Banker, you win!");
+//					    	    	  }
+//					    	    	  else {
+//					    	    		  listView.getItems().add("Sorry, you lost loser");
+//					    	    	  }
+//				    	    	  }
+
+								  //resultPBD comes from the whoWon function
+								  String resultPBD;
+								  resultPBD = gameLogic.whoWon(playerHand,bankerHand);
+
+								  //Options selected is the option the USER chooses of who to bet on ** WERE NOT UPDATING IT **
+
+								  //***1) Check ass soon as cards are dealt if there is a natural win
+								  if((valueOfPlayerHand == 8 || valueOfPlayerHand == 9) || (valueOfBankerHand == 8 || valueOfBankerHand == 9)){
+
+								  	if(resultPBD == "Player"){
+
+										listView.getItems().add("Player Wins");
+
+										if(optionSelected == "Player") {
 					    	    		  listView.getItems().add("Congrats, you bet Player, you win!");
-					    	    	  }
-					    	    	  else {
-					    	    		  listView.getItems().add("Sorry, you lost loser");
-					    	    	  }
-					    	    	  
-				    	    	  } 
-				    	    	  if(valueOfBankerHand == 8 || valueOfBankerHand == 9) {
-				    	    		  listView.getItems().add("The player total: " + valueOfPlayerHand + " Banker Total: " + valueOfBankerHand );
-					    	    	  listView.getItems().add("Banker Wins");
-					    	    	  if(optionSelected == "Banker") {
-					    	    		  listView.getItems().add("Congrats, you bet Banker, you win!");
-					    	    	  }
-					    	    	  else {
-					    	    		  listView.getItems().add("Sorry, you lost loser");
-					    	    	  }
-				    	    	  }
+					    	    	    }
+										else {
+											listView.getItems().add("Sorry, you lost loser");
+										}
+									}
+
+								  	if(resultPBD == "Banker"){
+
+										  listView.getItems().add("Banker Wins");
+
+										  if(optionSelected == "Banker") {
+											  listView.getItems().add("Congrats, you bet Banker, you win!");
+										  }
+										  else {
+											  listView.getItems().add("Sorry, you lost loser");
+										  }
+								  	}
+
+								  	if(resultPBD == "Draw"){
+										listView.getItems().add("Draw Wins");
+
+										if(optionSelected == "Draw") {
+											listView.getItems().add("Congrats, you bet Draw, you win!");
+										}
+										else {
+											listView.getItems().add("Sorry, you lost loser");
+										}
+								  	}
+								  }
+
+//								  //If no one won, than we check if the player will recieve a new card
+//								  if(gameLogic.evaluatePlayerDraw(playerHand)){
+//
+//
+//
+//								  }
+
 				    	      }
 
 		    			  }
@@ -370,7 +436,7 @@ public class BaccaratGame extends Application {
 	      drawButton.setVisible(true);
 	}
 	
-	// Should prob change before/just make a different method before submitting
+	// Should prob change before/just make a different method before submitting**NOTE
 	public static boolean isNumeric(String strNum) {
 	    try {
 	        Integer d = Integer.parseInt(strNum);

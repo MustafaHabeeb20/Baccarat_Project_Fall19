@@ -4,6 +4,10 @@
     <list default="true" id="8548e4cb-c734-4fef-b3e0-aa42939d6782" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BaccaratGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaccaratGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DealerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DealerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BaccaratGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BaccaratGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BaccaratGameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BaccaratGameLogic.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="104" column="63" lean-forward="true" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
+            <state relative-caret-position="1181">
+              <caret line="374" column="31" lean-forward="true" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -42,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratDealer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+            <state relative-caret-position="-59">
+              <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -51,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1815">
-              <caret line="121" column="27" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
+            <state relative-caret-position="-1406">
+              <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -60,10 +64,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DealerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11505">
-              <caret line="767" column="28" selection-start-line="767" selection-start-column="28" selection-end-line="767" selection-end-column="28" />
+            <state relative-caret-position="11490">
+              <caret line="766" selection-start-line="766" selection-end-line="766" />
               <folding>
-                <marker date="1571185461895" expanded="true" signature="14800:15166" ph="..." />
+                <marker date="1571366176450" expanded="true" signature="15388:15754" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,13 +132,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaccaratProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Baccarat_Project_Fall19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BaccaratProject" type="b2602c69:ProjectViewProjectNode" />
@@ -355,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571281252684</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="&quot;push oct 17 8:11   menu works!!! need to work on time and 1 huge event handler for gamelogic&quot;">
+      <created>1571317919767</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1571317919768</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -369,7 +373,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14652015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -385,7 +388,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16530612" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2132653" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.25714287" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.6142857" />
@@ -451,7 +454,8 @@
     <MESSAGE value="&quot;push oct 16 8:10pm&quot;" />
     <MESSAGE value="&quot;push oct 16 9:19pm&quot;" />
     <MESSAGE value="&quot;push oct 16 10:01pm   menu works!!!&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;push oct 16 10:01pm   menu works!!!&quot;" />
+    <MESSAGE value="&quot;push oct 17 8:11   menu works!!! need to work on time and 1 huge event handler for gamelogic&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;push oct 17 8:11   menu works!!! need to work on time and 1 huge event handler for gamelogic&quot;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Card.java">
@@ -461,34 +465,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratDealer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DealerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11505">
-          <caret line="767" column="28" selection-start-line="767" selection-start-column="28" selection-end-line="767" selection-end-column="28" />
+        <state relative-caret-position="11490">
+          <caret line="766" selection-start-line="766" selection-end-line="766" />
           <folding>
-            <marker date="1571185461895" expanded="true" signature="14800:15166" ph="..." />
+            <marker date="1571366176450" expanded="true" signature="15388:15754" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
-          <caret line="121" column="27" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
+        <state relative-caret-position="-1406">
+          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratDealer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-59">
+          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaccaratGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="104" column="63" lean-forward="true" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
+        <state relative-caret-position="1181">
+          <caret line="374" column="31" lean-forward="true" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
         </state>
       </provider>
     </entry>
